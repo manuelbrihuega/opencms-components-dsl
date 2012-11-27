@@ -1,0 +1,10 @@
+ORDENES BÁSICAS DE GIT:
+
+checkout privado-> git clone git@git.assembla.com:opencms-components-dsl.git
+checkout publico-> git clone git://git.assembla.com/opencms-components-dsl.git
+update-> git pull --rebase
+add-> git add fichero
+delete-> git rm fichero
+status-> git status
+commit local-> git commit -m "Informacion"
+commit externo-> git push
