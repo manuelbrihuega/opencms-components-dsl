@@ -1,0 +1,6 @@
+@namespace(uri="http://ermdiagram/1.0", prefix="ermdiagram") package ermdiagram;
+enum ERMDataType { String = 0; Number = 1; Decimal = 2; Date = 3; }
+@gmf.diagram(foo="bar") class ERMDiagram { val Attribute[*] attibutes; val Relationship[*] relationship; val Entity[*] entities; }
+@gmf.node(label="name", figure="ellipse", color="135,135,135") class Attribute { attr String name; attr ERMDataType type; }
+@gmf.node(label="name", color="255,153,0") class Relationship { attr String name; }
+@gmf.node(label="name", figure="rectangle", color="0,255,0") class Entity { attr String name; @gmf.link(target.decoration="arrow", style="solid") ref Relationship[*] entityRelationship; @gmf.link(target.decoration="arrow", style="dash") ref Attribute[*] entityAttribute; }
