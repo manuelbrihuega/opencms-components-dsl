@@ -1,6 +1,60 @@
-@namespace(uri="http://ermdiagram/1.0", prefix="ermdiagram") package ermdiagram;
-enum ERMDataType { String = 0; Number = 1; Decimal = 2; Date = 3; }
-@gmf.diagram(foo="bar") class ERMDiagram { val Attribute[*] attibutes; val Relationship[*] relationship; val Entity[*] entities; }
-@gmf.node(label="name", figure="ellipse", color="135,135,135") class Attribute { attr String name; attr ERMDataType type; }
-@gmf.node(label="name", color="255,153,0") class Relationship { attr String name; }
-@gmf.node(label="name", figure="rectangle", color="0,255,0") class Entity { attr String name; @gmf.link(target.decoration="arrow", style="solid") ref Relationship[*] entityRelationship; @gmf.link(target.decoration="arrow", style="dash") ref Attribute[*] entityAttribute; }
+@namespace(uri="http://OpenCMS/1.0", prefix="opencmsn") package opencms;
+enum Tipo { String = 0; Number = 1; Decimal = 2; Date = 3; }//no se que enum hay que poner
+@gmf.diagram(foo="bar")
+class Componente {
+	val ElementoOculto[*] elementoOculto;
+	val ElementoVisual[+] elementoVisual;
+	val ComponentePredeterminado[*] componentePredeterminado; 
+}
+
+
+@gmf.node(label="name", figure="rectangle", color="135,135,135")
+abstract class ElementoOculto { 
+	attr String name; 
+}
+
+class Url extends ElementoOculto {}
+class SelectorArvhivos extends ElementoOculto {}
+class Tag extends ElementoOculto {}
+class IdentificadorInterno extends ElementoOculto {}
+
+
+@gmf.node(label="name", color="255,153,0")
+abstract class ElementoVisual {
+	attr String name; 
+}
+
+class Entradilla extends ElementoVisual{}
+class BotonSeleccion extends ElementoVisual{}
+class Enlace extends ElementoVisual{}
+class Video extends ElementoVisual{}
+class Texto extends ElementoVisual{}
+class Boton extends ElementoVisual{}
+class Titulo extends ElementoVisual{
+	attr Boolean enlace;
+}
+class Etiqueta extends ElementoVisual{
+	attr Tipo tipo;
+}
+class Audio extends ElementoVisual{}
+class Subtitulo extends ElementoVisual{
+	attr boolean enlace;
+}
+class EntradaTexto extends ElementoVisual{}
+class Imagen extends ElementoVisual{
+	attr Float alto;
+	attr Float ancho;
+}
+
+@gmf.node(label="name", figure="rectangle", color="0,255,0")
+abstract class ComponentePredeterminado {
+	attr String name; 
+}
+
+class Baner extends ComponentePredeterminado{}
+class IconoRedSocial extends ComponentePredeterminado{}
+class MenuDesplegable extends ComponentePredeterminado{}
+class BarraDesplegable extends ComponentePredeterminado{}
+class Slider extends ComponentePredeterminado{}
+
+
