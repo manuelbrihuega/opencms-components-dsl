@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<!-- Include del esquema básico de opencms -->
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+	<xsd:include schemaLocation="opencms://system/modules/es.dipucadiz2.basico/schemas/multimedia/siaudio.xsd"/>
+	<xsd:include schemaLocation="opencms://system/modules/es.dipucadiz2.basico/schemas/multimedia/sivideo.xsd"/>
+	
+	<!-- Definición del tipo base -->
+	<xsd:element name="Metacomponentes" type="OpenCmsMetacomponentes" />
+        
+	<!-- Definición del tipo como secuencia -->
+	<xsd:complexType name="OpenCmsMetacomponentes">
+		<xsd:sequence>
+			<xsd:element name="Metacomponente" type="OpenCmsMetacomponente" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+        
+	<!-- Definición del campos del tipo -->
+	<xsd:complexType name="OpenCmsMetacomponente">
+		<xsd:sequence>
+			<xsd:element name="Titulo" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Subtitulo" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Entradilla" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Texto" type="OpenCmsHtml" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Enlace" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Imagen" type="OpenCmsVfsImage" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Fecha" type="OpenCmsDateTime" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Audio" type="OpenCmsSiAudio" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Video" type="OpenCmsSiVideo" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="BotonSeleccion" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Boton" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Etiqueta" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="EntradaTexto" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="URL" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="SelectorArchivo" type="OpenCmsVfsFile" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Tag" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="IdentificadorInterno" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="optional" default="es"/>
+	</xsd:complexType>
+
+	<xsd:annotation>	 	
+		<xsd:appinfo>
+			<resourcebundles>
+				<xmlbundle name="es.dipucadiz2.basico.workplace.xml">
+					<bundle locale="en">
+						<resource key="label.metacomponente.Titulo">Titulo</resource>
+						<resource key="label.metacomponente.Subtitulo">Subtitulo</resource>
+						<resource key="label.metacomponente.Entradilla">Entradilla</resource>
+						<resource key="label.metacomponente.Texto">Texto</resource>
+						<resource key="label.metacomponente.Enlace">Enlace</resource>
+						<resource key="label.metacomponente.Imagen">Imagen</resource>
+						<resource key="label.metacomponente.Fecha">Fecha</resource>
+						<resource key="label.metacomponente.Audio">Audio</resource>
+						<resource key="label.metacomponente.Video">Video</resource>
+						<resource key="label.metacomponente.BotonSeleccion">Botón selección</resource>
+						<resource key="label.metacomponente.Boton">Boton</resource>
+						<resource key="label.metacomponente.Etiqueta">Etiqueta</resource>
+						<resource key="label.metacomponente.EntradaTexto">Entrada de texto</resource>
+						<resource key="label.metacomponente.URL">URL</resource>
+						<resource key="label.metacomponente.SelectorArchivo">Selector de archivo</resource>
+						<resource key="label.metacomponente.Tag">Tag</resource>
+						<resource key="label.metacomponente.IdentificadorInterno">Identificador interno</resource>
+					</bundle>
+					<bundle locale="es">
+						<resource key="label.metacomponente.Titulo">Titulo</resource>
+						<resource key="label.metacomponente.Subtitulo">Subtitulo</resource>
+						<resource key="label.metacomponente.Entradilla">Entradilla</resource>
+						<resource key="label.metacomponente.Texto">Texto</resource>
+						<resource key="label.metacomponente.Enlace">Enlace</resource>
+						<resource key="label.metacomponente.Imagen">Imagen</resource>
+						<resource key="label.metacomponente.Fecha">Fecha</resource>
+						<resource key="label.metacomponente.Audio">Audio</resource>
+						<resource key="label.metacomponente.Video">Video</resource>
+						<resource key="label.metacomponente.BotonSeleccion">Botón selección</resource>
+						<resource key="label.metacomponente.Boton">Boton</resource>
+						<resource key="label.metacomponente.Etiqueta">Etiqueta</resource>
+						<resource key="label.metacomponente.EntradaTexto">Entrada de texto</resource>
+						<resource key="label.metacomponente.URL">URL</resource>
+						<resource key="label.metacomponente.SelectorArchivo">Selector de archivo</resource>
+						<resource key="label.metacomponente.Tag">Tag</resource>
+						<resource key="label.metacomponente.IdentificadorInterno">Identificador interno</resource>
+					</bundle>
+				</xmlbundle>
+			</resourcebundles>
+			<formatters>
+				<formatter type="center" uri="/system/modules/es.dipucadiz2.basico/formatters/basico/metacomponente.jsp"/>
+			</formatters>
+			<tabs>
+				<tab element="Titulo" collapse="false" name="Elementos visuales"/>
+				<tab element="URL" collapse="true" name="Elementos ocultos"/>
+			</tabs>
+			<layouts>
+				<layout element="Texto" widget="HtmlWidget" configuration="source,link,anchor,formatselect,image,imagegallery,height:400px,fullpage" />
+				<layout element="Imagen" widget="VfsImageWidget" configuration="{useformat:false, startup: '/galeria_imagen/', type: 'gallery', usedescription: false}"/>
+				<layout element="Fecha" widget="DateTimeWidget"/>
+				<layout element="SelectorArchivo" widget="VfsFileWidget" configuration="startsite=/sites/default/galeria_de_ficheros"/>
+			</layouts>
+			<defaults>
+				<default element="Titulo" value="Titulo por defecto"/>
+				<default element="URL" value="http://www.uca.es/"/>
+			</defaults>
+			<validationrules>
+				<rule element="Titulo" regex="!^\s*$" message="El campo Título es obligatorio"/>
+				<rule element="URL" regex="!^\s*$" message="Debe introducir una URL"/>
+			</validationrules>
+		</xsd:appinfo>
+	</xsd:annotation>
+</xsd:schema>

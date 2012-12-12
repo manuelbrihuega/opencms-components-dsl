@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<!-- Include del esquema básico de opencms -->
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+	<xsd:include schemaLocation="opencms://system/modules/es.dipucadiz2.basico/schemas/comunes/sisocialmedia.xsd"/>
+	<xsd:include schemaLocation="opencms://system/modules/es.dipucadiz2.basico/schemas/comunes/sitagcloud.xsd"/>
+	
+	<!-- Definición del tipo base -->
+	<xsd:element name="SiAudios" type="OpenCmsSiAudios" />
+        
+	<!-- Definición del tipo como secuencia -->
+	<xsd:complexType name="OpenCmsSiAudios">
+		<xsd:sequence>
+			<xsd:element name="SiAudio" type="OpenCmsSiAudio" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+        
+	<!-- Definición del campos del tipo -->
+	<xsd:complexType name="OpenCmsSiAudio">
+		<xsd:sequence>
+			<xsd:element name="Titulo" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Mp3" type="OpenCmsVfsFile" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Ogg" type="OpenCmsVfsFile" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Controles" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="optional" default="es"/>
+	</xsd:complexType>
+
+	<xsd:annotation>	 	
+		<xsd:appinfo>
+			<resourcebundles>
+				<xmlbundle name="es.dipucadiz2.basico.workplace.xml">
+					<bundle locale="en">
+						<resource key="label.SiAudio.Titulo">Titulo</resource>
+						<resource key="label.SiAudio.Mp3">Ruta del fichero en mp3</resource>
+						<resource key="label.SiAudio.Ogg">Ruta del fichero en ogg</resource>
+						<resource key="label.SiAudio.Controles">Habilitar los controles de sonido</resource>
+					</bundle>
+					<bundle locale="es">
+						<resource key="label.SiAudio.Titulo">Titulo</resource>
+						<resource key="label.SiAudio.Mp3">Ruta del fichero en mp3</resource>
+						<resource key="label.SiAudio.Ogg">Ruta del fichero en ogg</resource>
+						<resource key="label.SiAudio.Controles">Habilitar los controles de sonido</resource>
+					</bundle>
+				</xmlbundle>
+			</resourcebundles>
+			<mappings>
+				<mapping element="Titulo" mapto="property:Title"/>
+			</mappings>	
+			<tabs>
+				<tab element="Titulo" collapse="false" name="Contenido"/>
+			</tabs>
+			<layouts>
+				<layout element="Mp3" widget="DownloadGalleryWidget" configuration="{startup:'/galeria_audio/'}" />
+				<layout element="Ogg" widget="DownloadGalleryWidget" configuration="{startup:'/galeria_audio/'}" />
+				<layout element="Controles" widget="BooleanWidget" />
+			</layouts>
+			<validationrules>
+				<rule element="Titulo" regex="!^\s*$" message="El campo Título es obligatorio" />
+				<rule element="Mp3" regex="!^\s*$" message="Debe indicar el fichero mp3 de la pista de audio" />
+				<rule element="Ogg" regex="!^\s*$" message="Debe indicar el fichero ogg de la pista de audio" />
+			</validationrules>
+		</xsd:appinfo>
+	</xsd:annotation>
+</xsd:schema>

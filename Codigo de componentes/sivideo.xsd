@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<!-- Include del esquema básico de opencms -->
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+	
+	<!-- Definición del tipo base -->
+	<xsd:element name="SiVideos" type="OpenCmsSiVideos" />
+        
+	<!-- Definición del tipo como secuencia -->
+	<xsd:complexType name="OpenCmsSiVideos">
+		<xsd:sequence>
+			<xsd:element name="SiVideo" type="OpenCmsSiVideo" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+        
+	<!-- Definición del campos del tipo -->
+	<xsd:complexType name="OpenCmsSiVideo">
+		<xsd:sequence>
+			<xsd:element name="Titulo" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Ancho" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Alto" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Mp4" type="OpenCmsVfsFile" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Ogg" type="OpenCmsVfsFile" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Idyoutube" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Idvimeo" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="optional" default="es"/>
+	</xsd:complexType>
+
+	<xsd:annotation>	 	
+		<xsd:appinfo>
+			<resourcebundles>
+				<xmlbundle name="es.dipucadiz2.basico.workplace.xml">
+					<bundle locale="en">
+						<resource key="label.SiAudio.Titulo">Titulo</resource>
+						<resource key="label.SiAudio.Ancho">Ancho del reproductor</resource>
+						<resource key="label.SiAudio.Alto">Alto del reproducto</resource>
+						<resource key="label.SiAudio.Mp4">Ruta del fichero en mp4</resource>
+						<resource key="label.SiAudio.Ogg">Ruta del fichero en ogg</resource>
+						<resource key="label.SiAudio.Idyoutube">ID del video en youtube</resource>
+						<resource key="label.SiAudio.Idvimeo">ID del video en vimeo</resource>
+					</bundle>
+					<bundle locale="es">
+						<resource key="label.SiAudio.Titulo">Titulo</resource>
+						<resource key="label.SiAudio.Ancho">Ancho del reproductor</resource>
+						<resource key="label.SiAudio.Alto">Alto del reproducto</resource>
+						<resource key="label.SiAudio.Mp4">Ruta del fichero en mp4</resource>
+						<resource key="label.SiAudio.Ogg">Ruta del fichero en ogg</resource>
+						<resource key="label.SiAudio.Idyoutube">ID del video en youtube</resource>
+						<resource key="label.SiAudio.Idvimeo">ID del video en vimeo</resource>
+					</bundle>
+				</xmlbundle>
+			</resourcebundles>
+			<mappings>
+				<mapping element="Titulo" mapto="property:Title"/>
+			</mappings>	
+			<tabs>
+				<tab element="Titulo" collapse="false" name="Contenido" />
+			</tabs>
+			<layouts>
+				<layout element="Mp4" widget="DownloadGalleryWidget" configuration="{startup:'/galeria_video/'}" />
+				<layout element="Ogg" widget="DownloadGalleryWidget" configuration="{startup:'/galeria_video/'}" />
+			</layouts>
+			<validationrules>
+				<rule element="Titulo" regex="!^\s*$" message="El campo Título es obligatorio" />
+				<rule element="Ancho" regex="!^\s*$" message="Debe indicar el ancho del reproductor. 100% para ocupar todo el ancho." />
+				<rule element="Alto" regex="!^\s*$" message="Debe indicar el alto del reproductor. auto para que este se adapte solo." />
+			</validationrules>
+		</xsd:appinfo>
+	</xsd:annotation>
+</xsd:schema>

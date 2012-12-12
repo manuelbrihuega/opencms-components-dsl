@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<!-- Include del esquema básico de opencms -->
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+	<xsd:include schemaLocation="opencms://system/modules/es.dipucadiz2.basico/schemas/multimedia/sivideo.xsd"/>
+	
+	<!-- Definición del tipo base -->
+	<xsd:element name="SiBanners" type="OpenCmsSiBanners" />
+        
+	<!-- Definición del tipo como secuencia -->
+	<xsd:complexType name="OpenCmsSiBanners">
+		<xsd:sequence>
+			<xsd:element name="SiBanner" type="OpenCmsSiBanner" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+        
+	<!-- Definición del campos del tipo -->
+	<xsd:complexType name="OpenCmsSiBanner">
+		<xsd:sequence>
+			<xsd:element name="Titulo" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Enlace" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Ancho" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Alto" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Imagen" type="OpenCmsVfsImage" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Video" type="OpenCmsSiVideo" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="optional" default="es"/>
+	</xsd:complexType>
+
+	<xsd:annotation>	 	
+		<xsd:appinfo>
+			<resourcebundles>
+				<xmlbundle name="es.dipucadiz2.basico.workplace.xml">
+					<bundle locale="en">
+						<resource key="label.SiBanner.Titulo">Titulo</resource>
+						<resource key="label.SiBanner.Enlace">Enlace</resource>
+						<resource key="label.SiBanner.Ancho">Ancho del banner</resource>
+						<resource key="label.SiBanner.Alto">Alto del banner</resource>
+						<resource key="label.SiBanner.Imagen">Imagen del banner</resource>
+						<resource key="label.SiBanner.Video">Video del banner</resource>
+					</bundle>
+					<bundle locale="es">
+						<resource key="label.SiBanner.Titulo">Titulo</resource>
+						<resource key="label.SiBanner.Enlace">Enlace</resource>
+						<resource key="label.SiBanner.Ancho">Ancho del banner</resource>
+						<resource key="label.SiBanner.Alto">Alto del banner</resource>	
+						<resource key="label.SiBanner.Imagen">Imagen del banner</resource>
+						<resource key="label.SiBanner.Video">Video del banner</resource>
+					</bundle>
+				</xmlbundle>
+			</resourcebundles>
+			<mappings>
+				<mapping element="Titulo" mapto="property:Title"/>
+				<mapping element="Titulo" mapto="urlName"/>
+			</mappings>	
+			<tabs>
+				<tab element="Titulo" collapse="false" name="Banner"/>
+				<tab element="Video" collapse="false" name="Video"/>
+			</tabs>
+			<formatters>
+				<formatter type="bottom" uri="/system/modules/es.dipucadiz2.basico/formatters/widgets/sibanner.jsp"/>
+			</formatters>
+			<layouts>
+				<layout element="Imagen" widget="VfsImageWidget" configuration="{useformat:false, startup: '/galeria_imagen/', type: 'gallery', usedescription: false}"/>		
+			</layouts>
+			<defaults>
+				<default element="Titulo" value="Banner"/>
+				<default element="Enlace" value="http://www.dipucadiz.es/"/>
+				<default element="Ancho" value="150"/>
+				<default element="Alto" value="60"/>
+				<default element="Imagen" value="/sites/default/galeria_imagen/bannerdefault.png"/>
+			</defaults>
+		</xsd:appinfo>
+	</xsd:annotation>
+</xsd:schema>

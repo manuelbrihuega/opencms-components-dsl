@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<!-- Include del esquema básico de opencms -->
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+	
+	<!-- 3. Definición del elemento raiz y declaración del tipo -->
+	<xsd:element name="SiWidgetsRedessociales" type="OpenCmsSiWidgetsRedessociales"/>
+	
+	<!-- 4. Definición del tipo del elemento raiz -->
+	<xsd:complexType name="OpenCmsSiWidgetsRedessociales">
+		<xsd:sequence>
+			<xsd:element name="SiWidgetRedessociales" type="OpenCmsSiWidgetRedessociales" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OpenCmsSiWidgetRedessociales">
+		<xsd:sequence>
+			<xsd:element name="Titulo" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+                        <xsd:element name="URLTwitter" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+                        <xsd:element name="URLYoutube" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+                        <xsd:element name="URLFacebook" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+                        <xsd:element name="URLLinkedin" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
+                        <xsd:element name="URLTuenti" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
+                        <xsd:element name="URLGoogleplus" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="optional" />
+	</xsd:complexType>
+	
+	<!-- 5. Definiciones opcionales del fichero -->
+	<xsd:annotation>
+		<xsd:appinfo>
+                        <resourcebundles>
+				<xmlbundle name="es.dipucadiz2.basico.workplace.xml">
+					<bundle locale="en">
+						<resource key="label.SiWidgetRedessociales.Titulo">Titulo</resource>
+						<resource key="label.SiWidgetRedessociales.URLTwitter">URL de Twitter</resource>
+						<resource key="label.SiWidgetRedessociales.URLYoutube">URL de Youtube</resource>
+						<resource key="label.SiWidgetRedessociales.URLFacebook">URL de Facebook</resource>
+						<resource key="label.SiWidgetRedessociales.URLLinkedin">URL de Linkedin</resource>
+						<resource key="label.SiWidgetRedessociales.URLTuenti">URL de Tuenti</resource>
+						<resource key="label.SiWidgetRedessociales.URLGoogleplus">URL de Google+</resource>
+					</bundle>
+					<bundle locale="es">
+						<resource key="label.SiWidgetRedessociales.Titulo">Titulo</resource>
+						<resource key="label.SiWidgetRedessociales.URLTwitter">URL de Twitter</resource>
+						<resource key="label.SiWidgetRedessociales.URLYoutube">URL de Youtube</resource>
+						<resource key="label.SiWidgetRedessociales.URLFacebook">URL de Facebook</resource>
+						<resource key="label.SiWidgetRedessociales.URLLinkedin">URL de Linkedin</resource>
+						<resource key="label.SiWidgetRedessociales.URLTuenti">URL de Tuenti</resource>
+						<resource key="label.SiWidgetRedessociales.URLGoogleplus">URL de Google+</resource>
+					</bundle>
+				</xmlbundle>
+			</resourcebundles>
+			<mappings>
+				<mapping element="Titulo" mapto="property:Title"/>
+				<mapping element="Titulo" mapto="urlName"/>
+			</mappings>
+			<tabs>
+				<tab element="Titulo" collapse="false" name="Redes sociales"/>
+			</tabs>
+			<formatters>
+				<formatter type="bottom" uri="/system/modules/es.dipucadiz2.basico/formatters/widgets/siwidgetredessociales.jsp" searchcontent="true"/>
+			</formatters>
+			<defaults>
+				<default element="Titulo" value="Redes sociales"/>
+				<default element="URLTwitter" value="http://www.twitter.com"/>
+				<default element="URLYoutube" value="http://www.youtube.com"/>
+				<default element="URLFacebook" value="http://www.facebook.com"/>
+			</defaults>
+			<validationrules>
+				<rule element="Titulo" regex="!^\s*$" message="El campo Título es obligatorio" />
+				<rule element="URLTwitter" regex="!^\s*$" message="El campo URLTwitter es obligatorio" />
+				<rule element="URLYoutube" regex="!^\s*$" message="El campo URLYoutube es obligatorio" />
+				<rule element="URLFacebook" regex="!^\s*$" message="El campo URLFacebook es obligatorio" />
+			</validationrules>
+		</xsd:appinfo>
+	</xsd:annotation>
+
+</xsd:schema>
