@@ -24,6 +24,7 @@ abstract class ElementoVisual {
 	attr String name; 
 }
 
+class Fecha extends ElementoVisual{}
 class Entradilla extends ElementoVisual{}
 class BotonSeleccion extends ElementoVisual{}
 class Enlace extends ElementoVisual{}
