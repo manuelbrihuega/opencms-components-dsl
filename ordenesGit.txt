@@ -8,3 +8,4 @@ delete-> git rm fichero
 status-> git status
 commit local-> git commit -m "Informacion"
 commit externo-> git push
+deshacer cambios locales -> git reset --hard

@@ -1,6 +1,9 @@
 @namespace(uri="http://OpenCMS/1.0", prefix="opencmsn") package opencms;
 enum Tipo { String = 0; Number = 1; Decimal = 2; Date = 3; }//no se que enum hay que poner
 @gmf.diagram(foo="bar")
+class Diagrama{
+   val Componente[1] componente;
+}
 class Componente {
 	val ElementoOculto[*] elementoOculto;
 	val ElementoVisual[+] elementoVisual;
@@ -10,7 +13,8 @@ class Componente {
 
 @gmf.node(label="name", figure="rectangle", color="135,135,135")
 abstract class ElementoOculto { 
-	attr String name; 
+	attr String name;
+	attr int orden;
 }
 
 class Url extends ElementoOculto {}
@@ -21,7 +25,8 @@ class IdentificadorInterno extends ElementoOculto {}
 
 @gmf.node(label="name", color="255,153,0")
 abstract class ElementoVisual {
-	attr String name; 
+	attr String name;
+	attr int orden; 
 }
 
 class Fecha extends ElementoVisual{}
@@ -49,7 +54,8 @@ class Imagen extends ElementoVisual{
 
 @gmf.node(label="name", figure="rectangle", color="0,255,0")
 abstract class ComponentePredeterminado {
-	attr String name; 
+	attr String name;
+	attr int orden; 
 }
 
 class Baner extends ComponentePredeterminado{}
