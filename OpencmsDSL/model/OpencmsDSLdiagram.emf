@@ -1,5 +1,4 @@
 @namespace(uri="http://OpenCMS/1.0", prefix="opencmsn") package opencms;
-enum Tipo { Default = 0; Success = 1; Warning = 2; Important = 3;}
 
 @gmf.diagram(foo="bar")
 class Diagrama{
@@ -17,7 +16,7 @@ class Componente {
 	val ComponentePredeterminado[*] componentePredeterminado; 
 }
 
-@gmf.node(label="name", figure="rectangle", color="135,135,135")
+@gmf.node(label="name,orden", figure="rectangle", color="135,135,135", label.pattern="{0}:{1}")
 abstract class ElementoOculto { 
 	attr String name;
 	attr int orden;
@@ -28,8 +27,7 @@ class SelectorArvhivos extends ElementoOculto {}
 class Tag extends ElementoOculto {}
 class IdentificadorInterno extends ElementoOculto {}
 
-
-@gmf.node(label="name", color="255,153,0")
+@gmf.node(label="name,orden", figure="rectangle", color="135,135,135", label.pattern="{0}:{1}")
 abstract class ElementoVisual {
 	attr String name;
 	attr int orden; 
@@ -43,22 +41,23 @@ class Video extends ElementoVisual{}
 class Texto extends ElementoVisual{}
 class Boton extends ElementoVisual{}
 class Titulo extends ElementoVisual{
+	@gmf.label(foo="bar")
 	attr Boolean enlace;
 }
-class Etiqueta extends ElementoVisual{
-	attr Tipo tipo;
-}
+class Etiqueta extends ElementoVisual{}
 class Audio extends ElementoVisual{}
 class Subtitulo extends ElementoVisual{
+	@gmf.label(foo="bar")
 	attr boolean enlace;
 }
 class EntradaTexto extends ElementoVisual{}
 class Imagen extends ElementoVisual{
+	@gmf.label(foo="bar")
 	attr Float alto;
+	@gmf.label(foo="bar")
 	attr Float ancho;
 }
-
-@gmf.node(label="name", figure="rectangle", color="0,255,0")
+@gmf.node(label="name,orden", figure="rectangle", color="135,135,135", label.pattern="{0}:{1}")
 abstract class ComponentePredeterminado {
 	attr String name;
 	attr int orden; 
