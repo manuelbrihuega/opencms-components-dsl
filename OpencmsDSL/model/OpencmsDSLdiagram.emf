@@ -1,17 +1,21 @@
 @namespace(uri="http://OpenCMS/1.0", prefix="opencmsn") package opencms;
-enum Tipo { Default = 0; Success = 1; Warning = 2; Important = 3;}//no se que enum hay que poner
+enum Tipo { Default = 0; Success = 1; Warning = 2; Important = 3;}
+
 @gmf.diagram(foo="bar")
 class Diagrama{
    val Componente[1] componente;
 }
+
 @gmf.node(label="name", figure="rectangle", color="135,35,35")
 class Componente {
 	attr String name;
+	@gmf.compartment(foo="bar")
 	val ElementoOculto[*] elementoOculto;
+	@gmf.compartment(foo="bar")
 	val ElementoVisual[+] elementoVisual;
+	@gmf.compartment(foo="bar")
 	val ComponentePredeterminado[*] componentePredeterminado; 
 }
-
 
 @gmf.node(label="name", figure="rectangle", color="135,135,135")
 abstract class ElementoOculto { 
