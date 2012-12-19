@@ -19,7 +19,7 @@
 	<!-- Definición del campos del tipo -->
 	<xsd:complexType name="OpenCmsMetacomponente">
 		<xsd:sequence>
-			<xsd:element name="Titulo" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Titulo" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
 			<xsd:element name="Subtitulo" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
 			<xsd:element name="Entradilla" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
 			<xsd:element name="Texto" type="OpenCmsHtml" minOccurs="0" maxOccurs="1" />
@@ -32,58 +32,15 @@
 			<xsd:element name="Boton" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
 			<xsd:element name="Etiqueta" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
 			<xsd:element name="EntradaTexto" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
-			<xsd:element name="URL" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="URL" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
 			<xsd:element name="SelectorArchivo" type="OpenCmsVfsFile" minOccurs="0" maxOccurs="1" />
 			<xsd:element name="Tag" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
 			<xsd:element name="IdentificadorInterno" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
 		</xsd:sequence>
 		<xsd:attribute name="language" type="OpenCmsLocale" use="optional" default="es"/>
 	</xsd:complexType>
-
 	<xsd:annotation>	 	
 		<xsd:appinfo>
-			<resourcebundles>
-				<xmlbundle name="es.dipucadiz2.basico.workplace.xml">
-					<bundle locale="en">
-						<resource key="label.metacomponente.Titulo">Titulo</resource>
-						<resource key="label.metacomponente.Subtitulo">Subtitulo</resource>
-						<resource key="label.metacomponente.Entradilla">Entradilla</resource>
-						<resource key="label.metacomponente.Texto">Texto</resource>
-						<resource key="label.metacomponente.Enlace">Enlace</resource>
-						<resource key="label.metacomponente.Imagen">Imagen</resource>
-						<resource key="label.metacomponente.Fecha">Fecha</resource>
-						<resource key="label.metacomponente.Audio">Audio</resource>
-						<resource key="label.metacomponente.Video">Video</resource>
-						<resource key="label.metacomponente.BotonSeleccion">Botón selección</resource>
-						<resource key="label.metacomponente.Boton">Boton</resource>
-						<resource key="label.metacomponente.Etiqueta">Etiqueta</resource>
-						<resource key="label.metacomponente.EntradaTexto">Entrada de texto</resource>
-						<resource key="label.metacomponente.URL">URL</resource>
-						<resource key="label.metacomponente.SelectorArchivo">Selector de archivo</resource>
-						<resource key="label.metacomponente.Tag">Tag</resource>
-						<resource key="label.metacomponente.IdentificadorInterno">Identificador interno</resource>
-					</bundle>
-					<bundle locale="es">
-						<resource key="label.metacomponente.Titulo">Titulo</resource>
-						<resource key="label.metacomponente.Subtitulo">Subtitulo</resource>
-						<resource key="label.metacomponente.Entradilla">Entradilla</resource>
-						<resource key="label.metacomponente.Texto">Texto</resource>
-						<resource key="label.metacomponente.Enlace">Enlace</resource>
-						<resource key="label.metacomponente.Imagen">Imagen</resource>
-						<resource key="label.metacomponente.Fecha">Fecha</resource>
-						<resource key="label.metacomponente.Audio">Audio</resource>
-						<resource key="label.metacomponente.Video">Video</resource>
-						<resource key="label.metacomponente.BotonSeleccion">Botón selección</resource>
-						<resource key="label.metacomponente.Boton">Boton</resource>
-						<resource key="label.metacomponente.Etiqueta">Etiqueta</resource>
-						<resource key="label.metacomponente.EntradaTexto">Entrada de texto</resource>
-						<resource key="label.metacomponente.URL">URL</resource>
-						<resource key="label.metacomponente.SelectorArchivo">Selector de archivo</resource>
-						<resource key="label.metacomponente.Tag">Tag</resource>
-						<resource key="label.metacomponente.IdentificadorInterno">Identificador interno</resource>
-					</bundle>
-				</xmlbundle>
-			</resourcebundles>
 			<formatters>
 				<formatter type="center" uri="/system/modules/es.dipucadiz2.basico/formatters/basico/metacomponente.jsp"/>
 			</formatters>
@@ -97,14 +54,6 @@
 				<layout element="Fecha" widget="DateTimeWidget"/>
 				<layout element="SelectorArchivo" widget="VfsFileWidget" configuration="startsite=/sites/default/galeria_de_ficheros"/>
 			</layouts>
-			<defaults>
-				<default element="Titulo" value="Titulo por defecto"/>
-				<default element="URL" value="http://www.uca.es/"/>
-			</defaults>
-			<validationrules>
-				<rule element="Titulo" regex="!^\s*$" message="El campo Título es obligatorio"/>
-				<rule element="URL" regex="!^\s*$" message="Debe introducir una URL"/>
-			</validationrules>
 		</xsd:appinfo>
 	</xsd:annotation>
 </xsd:schema>
