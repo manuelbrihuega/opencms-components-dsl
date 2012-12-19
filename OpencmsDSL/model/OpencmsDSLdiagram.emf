@@ -4,8 +4,7 @@
 class Diagrama{
    val Componente[1] componente;
 }
-
-@gmf.node(label="name", figure="rectangle", color="135,35,35")
+@gmf.node(label="name,orden", figure="rectangle", color="135,35,35", label.pattern="{0}:{1}" , tool.small.bundle="OpencmsDSL", tool.small.path="resources/icono_componente.gif",tool.large.path="resources/icono_componente.gif",label.icon="true")
 class Componente {
 	attr String name;
 	@gmf.compartment(foo="bar")
@@ -15,8 +14,7 @@ class Componente {
 	@gmf.compartment(foo="bar")
 	val ComponentePredeterminado[*] componentePredeterminado; 
 }
-
-@gmf.node(label="name,orden", figure="rectangle", color="135,135,135", label.pattern="{0}:{1}")
+@gmf.node(label="name,orden", figure="rectangle", color="135,35,135", label.pattern="{0}:{1}" , tool.small.bundle="OpencmsDSL", tool.small.path="resources/icono_ojo_oculto.gif",tool.large.path="resources/icono_ojo_oculto.gif",label.icon="true")
 abstract class ElementoOculto { 
 	attr String name;
 	attr int orden;
@@ -57,7 +55,7 @@ class Imagen extends ElementoVisual{
 	@gmf.label(foo="bar")
 	attr Float ancho;
 }
-@gmf.node(label="name,orden", figure="rectangle", color="135,135,135", label.pattern="{0}:{1}")
+@gmf.node(label="name,orden", figure="rectangle", color="35,135,135", label.pattern="{0}:{1}" , tool.small.bundle="OpencmsDSL", tool.small.path="resources/icono_componente_predeterminado.gif",tool.large.path="resources/icono_componente_predeterminado.gif",label.icon="true")
 abstract class ComponentePredeterminado {
 	attr String name;
 	attr int orden; 
