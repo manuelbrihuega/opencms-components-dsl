@@ -23,7 +23,7 @@ palette.tools.add(nodesToolGroup1);
 
 //Grupo Elemento Visual
 var nodesToolGroupVisual = new GmfTool!ToolGroup;
-nodesToolGroupVisual.title := 'Elementos Visual';
+nodesToolGroupVisual.title := 'Elementos Visuales';
 nodesToolGroupVisual.collapsible := true;
 
 var Fecha = GmfTool!CreationTool.all.selectOne(r|r.title="Fecha");
