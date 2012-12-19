@@ -1,0 +1,87 @@
+var palette = GmfTool!Palette.all.selectOne(r|r.title="opencmsPalette");
+var nodesToolGroup1 = new GmfTool!ToolGroup;
+nodesToolGroup1.title := 'Elementos Ocultos';
+nodesToolGroup1.collapsible := true;
+
+//Add tools to the group:
+var baner = GmfTool!CreationTool.all.selectOne(r|r.title="Baner");
+nodesToolGroup1.tools.add(baner);
+
+var IconoRedSocial = GmfTool!CreationTool.all.selectOne(r|r.title="IconoRedSocial");
+nodesToolGroup1.tools.add(IconoRedSocial);
+
+var slider = GmfTool!CreationTool.all.selectOne(r|r.title="Slider");
+nodesToolGroup1.tools.add(slider);
+
+var BarraDesplegable = GmfTool!CreationTool.all.selectOne(r|r.title="BarraDesplegable");
+nodesToolGroup1.tools.add(BarraDesplegable);
+
+var MenuDesplegable = GmfTool!CreationTool.all.selectOne(r|r.title="MenuDesplegable");
+nodesToolGroup1.tools.add(MenuDesplegable);
+
+palette.tools.add(nodesToolGroup1);
+
+//Grupo Elemento Visual
+var nodesToolGroupVisual = new GmfTool!ToolGroup;
+nodesToolGroupVisual.title := 'Elementos Visual';
+nodesToolGroupVisual.collapsible := true;
+
+var Fecha = GmfTool!CreationTool.all.selectOne(r|r.title="Fecha");
+nodesToolGroupVisual.tools.add(Fecha);
+
+var Entradilla = GmfTool!CreationTool.all.selectOne(r|r.title="Entradilla");
+nodesToolGroupVisual.tools.add(Entradilla);
+
+var BotonSeleccion = GmfTool!CreationTool.all.selectOne(r|r.title="BotonSeleccion");
+nodesToolGroupVisual.tools.add(BotonSeleccion);
+
+var Enlace = GmfTool!CreationTool.all.selectOne(r|r.title="Enlace");
+nodesToolGroupVisual.tools.add(Enlace);
+
+var Video = GmfTool!CreationTool.all.selectOne(r|r.title="Video");
+nodesToolGroupVisual.tools.add(Video);
+
+var Texto = GmfTool!CreationTool.all.selectOne(r|r.title="Texto");
+nodesToolGroupVisual.tools.add(Texto);
+
+var Boton = GmfTool!CreationTool.all.selectOne(r|r.title="Boton");
+nodesToolGroupVisual.tools.add(Boton);
+
+var Titulo = GmfTool!CreationTool.all.selectOne(r|r.title="Titulo");
+nodesToolGroupVisual.tools.add(Titulo);
+
+var Etiqueta = GmfTool!CreationTool.all.selectOne(r|r.title="Etiqueta");
+nodesToolGroupVisual.tools.add(Etiqueta);
+
+var Audio = GmfTool!CreationTool.all.selectOne(r|r.title="Audio");
+nodesToolGroupVisual.tools.add(Audio);
+
+var Subtitulo = GmfTool!CreationTool.all.selectOne(r|r.title="Subtitulo");
+nodesToolGroupVisual.tools.add(Subtitulo);
+
+var EntradaTexto = GmfTool!CreationTool.all.selectOne(r|r.title="EntradaTexto");
+nodesToolGroupVisual.tools.add(EntradaTexto);
+
+var Imagen = GmfTool!CreationTool.all.selectOne(r|r.title="Imagen");
+nodesToolGroupVisual.tools.add(Imagen);
+
+palette.tools.add(nodesToolGroupVisual);
+
+//Grupo: Componenete Predeterminado
+var nodesToolGroupPredeterminado = new GmfTool!ToolGroup;
+nodesToolGroupPredeterminado.title := 'Componente Predeterminado';
+nodesToolGroupPredeterminado.collapsible := true;
+
+var SelectorArchivos = GmfTool!CreationTool.all.selectOne(r|r.title="SelectorArchivos");
+nodesToolGroupPredeterminado.tools.add(SelectorArchivos);
+
+var Url = GmfTool!CreationTool.all.selectOne(r|r.title="Url");
+nodesToolGroupPredeterminado.tools.add(Url);
+
+var Tag = GmfTool!CreationTool.all.selectOne(r|r.title="Tag");
+nodesToolGroupPredeterminado.tools.add(Tag);
+
+var IdentificadorInterno = GmfTool!CreationTool.all.selectOne(r|r.title="IdentificadorInterno");
+nodesToolGroupPredeterminado.tools.add(IdentificadorInterno);
+
+palette.tools.add(nodesToolGroupPredeterminado);
