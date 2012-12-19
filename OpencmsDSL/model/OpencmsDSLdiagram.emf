@@ -23,7 +23,7 @@ abstract class ElementoOculto {
 }
 
 class Url extends ElementoOculto {}
-class SelectorArvhivos extends ElementoOculto {}
+class SelectorArchivos extends ElementoOculto {}
 class Tag extends ElementoOculto {}
 class IdentificadorInterno extends ElementoOculto {}
 
