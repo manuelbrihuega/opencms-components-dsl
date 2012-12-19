@@ -27,7 +27,7 @@ class SelectorArchivos extends ElementoOculto {}
 class Tag extends ElementoOculto {}
 class IdentificadorInterno extends ElementoOculto {}
 
-@gmf.node(label="name,orden", figure="rectangle", color="135,135,135", label.pattern="{0}:{1}")
+@gmf.node(label="name,orden", figure="rectangle", color="135,135,135", label.pattern="{0}:{1}" , tool.small.bundle="OpencmsDSL", tool.small.path="resources/icono_ojo.gif",tool.large.path="resources/icono_ojo.gif",label.icon="true")
 abstract class ElementoVisual {
 	attr String name;
 	attr int orden; 
