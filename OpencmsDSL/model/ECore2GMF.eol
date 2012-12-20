@@ -1,6 +1,6 @@
 var palette = GmfTool!Palette.all.selectOne(r|r.title="opencmsPalette");
 var nodesToolGroup1 = new GmfTool!ToolGroup;
-nodesToolGroup1.title := 'Elementos Ocultos';
+nodesToolGroup1.title := 'Componente Predeterminado';
 nodesToolGroup1.collapsible := true;
 
 //Add tools to the group:
@@ -68,20 +68,20 @@ nodesToolGroupVisual.tools.add(Imagen);
 palette.tools.add(nodesToolGroupVisual);
 
 //Grupo: Componenete Predeterminado
-var nodesToolGroupPredeterminado = new GmfTool!ToolGroup;
-nodesToolGroupPredeterminado.title := 'Componente Predeterminado';
-nodesToolGroupPredeterminado.collapsible := true;
+var nodesToolGroupOculto = new GmfTool!ToolGroup;
+nodesToolGroupOculto.title := 'Elementos Ocultos';
+nodesToolGroupOculto.collapsible := true;
 
 var SelectorArchivos = GmfTool!CreationTool.all.selectOne(r|r.title="SelectorArchivos");
-nodesToolGroupPredeterminado.tools.add(SelectorArchivos);
+nodesToolGroupOculto.tools.add(SelectorArchivos);
 
 var Url = GmfTool!CreationTool.all.selectOne(r|r.title="Url");
-nodesToolGroupPredeterminado.tools.add(Url);
+nodesToolGroupOculto.tools.add(Url);
 
 var Tag = GmfTool!CreationTool.all.selectOne(r|r.title="Tag");
-nodesToolGroupPredeterminado.tools.add(Tag);
+nodesToolGroupOculto.tools.add(Tag);
 
 var IdentificadorInterno = GmfTool!CreationTool.all.selectOne(r|r.title="IdentificadorInterno");
-nodesToolGroupPredeterminado.tools.add(IdentificadorInterno);
+nodesToolGroupOculto.tools.add(IdentificadorInterno);
 
-palette.tools.add(nodesToolGroupPredeterminado);
+palette.tools.add(nodesToolGroupOculto);
