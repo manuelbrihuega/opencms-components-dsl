@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<!-- Include del esquema básico de opencms -->
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+	
+	<!-- Definición del tipo base -->
+	<xsd:element name="SiSocials" type="OpenCmsSiSocials" />
+        
+	<!-- Definición del tipo como secuencia -->
+	<xsd:complexType name="OpenCmsSiSocials">
+		<xsd:sequence>
+			<xsd:element name="SiSocial" type="OpenCmsSiSocial" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+        
+	<!-- Definición del campos del tipo -->
+	<xsd:complexType name="OpenCmsSiSocial">
+		<xsd:sequence>
+			<xsd:element name="share_delicious" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="share_facebook" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="share_googleplus" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="share_linkedin" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="share_tuenti" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="share_twitter" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="share_xing" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="share_msn" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="print" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="size" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="texto_compartir" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="optional" default="es"/>
+	</xsd:complexType>
+        
+	<xsd:annotation>	 	
+		<xsd:appinfo>
+			<layouts>
+				<layout element="size" widget="SelectorWidget" configuration="16|24|32" />
+				<layout element="share_delicious" widget="BooleanWidget" />
+				<layout element="share_facebook" widget="BooleanWidget" />
+				<layout element="share_googleplus" widget="BooleanWidget" />
+				<layout element="share_linkedin" widget="BooleanWidget" />
+				<layout element="share_tuenti" widget="BooleanWidget" />
+				<layout element="share_twitter" widget="BooleanWidget" />
+				<layout element="share_xing" widget="BooleanWidget" />
+				<layout element="share_msn" widget="BooleanWidget" />
+				<layout element="print" widget="BooleanWidget" />
+			</layouts>
+			<resourcebundles>
+				<xmlbundle name="es.dipucadiz2.basico.workplace.xml">
+					<bundle locale="en">
+						<resource key="label.SiSocial.share_delicious">Compartir en Delicious</resource>
+						<resource key="label.SiSocial.share_facebook">Compartir en Facebook</resource>
+						<resource key="label.SiSocial.share_googleplus">Compartir en Google Plus</resource>
+						<resource key="label.SiSocial.share_linkedin">Compartir en Linked In</resource>
+						<resource key="label.SiSocial.share_tuenti">Compartir en Tuenti</resource>
+						<resource key="label.SiSocial.share_twitter">Compartir en Twitter</resource>
+						<resource key="label.SiSocial.share_xing">Compartir en Xing</resource>
+						<resource key="label.SiSocial.share_msn">Compartir en MSN</resource>
+						<resource key="label.SiSocial.print">Imprimir</resource>
+						<resource key="label.SiSocial.size">Tamaño de las iconos</resource>
+						<resource key="label.SiSocial.texto_compartir">Texto de la etiqueta compartir</resource>
+					</bundle>
+					<bundle locale="es">
+						<resource key="label.SiSocial.share_delicious">Compartir en Delicious</resource>
+						<resource key="label.SiSocial.share_facebook">Compartir en Facebook</resource>
+						<resource key="label.SiSocial.share_googleplus">Compartir en Google Plus</resource>
+						<resource key="label.SiSocial.share_linkedin">Compartir en Linked In</resource>
+						<resource key="label.SiSocial.share_tuenti">Compartir en Tuenti</resource>
+						<resource key="label.SiSocial.share_twitter">Compartir en Twitter</resource>
+						<resource key="label.SiSocial.share_xing">Compartir en Xing</resource>
+						<resource key="label.SiSocial.share_msn">Compartir en MSN</resource>
+						<resource key="label.SiSocial.print">Imprimir</resource>
+						<resource key="label.SiSocial.size">Tamaño de las iconos</resource>
+						<resource key="label.SiSocial.texto_compartir">Texto de la etiqueta compartir</resource>
+					</bundle>
+				</xmlbundle>
+			</resourcebundles>
+		</xsd:appinfo>
+	</xsd:annotation>
+</xsd:schema>

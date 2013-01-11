@@ -1,0 +1,7 @@
+# Tracing options for the OpencmsDSL.diagram plug-in
+
+# Common issues
+OpencmsDSL.diagram/debug=false
+
+# Visual IDs
+OpencmsDSL.diagram/debug/visualID=false

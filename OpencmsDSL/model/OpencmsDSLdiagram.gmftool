@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmftool:ToolRegistry
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="opencmsPalette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Objects"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Componente"
+          description="Create new Componente">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_componente.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_componente.gif"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Componente Predeterminado"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Baner"
+          description="Create new Baner">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_componente_predeterminado.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_componente_predeterminado.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="IconoRedSocial"
+          description="Create new IconoRedSocial">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_componente_predeterminado.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_componente_predeterminado.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Slider"
+          description="Create new Slider">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_componente_predeterminado.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_componente_predeterminado.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="BarraDesplegable"
+          description="Create new BarraDesplegable">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_componente_predeterminado.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_componente_predeterminado.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="MenuDesplegable"
+          description="Create new MenuDesplegable">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_componente_predeterminado.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_componente_predeterminado.gif"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Elementos Visuales"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Fecha"
+          description="Create new Fecha">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Entradilla"
+          description="Create new Entradilla">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="BotonSeleccion"
+          description="Create new BotonSeleccion">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Enlace"
+          description="Create new Enlace">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Video"
+          description="Create new Video">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Texto"
+          description="Create new Texto">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Boton"
+          description="Create new Boton">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Titulo"
+          description="Create new Titulo">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Etiqueta"
+          description="Create new Etiqueta">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Audio"
+          description="Create new Audio">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Subtitulo"
+          description="Create new Subtitulo">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="EntradaTexto"
+          description="Create new EntradaTexto">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Imagen"
+          description="Create new Imagen">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo.gif"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Elementos Ocultos"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="SelectorArchivos"
+          description="Create new SelectorArchivos">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo_oculto.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo_oculto.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Url"
+          description="Create new Url">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo_oculto.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo_oculto.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Tag"
+          description="Create new Tag">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo_oculto.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo_oculto.gif"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="IdentificadorInterno"
+          description="Create new IdentificadorInterno">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo_oculto.gif"
+            bundle="OpencmsDSL"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="resources/icono_ojo_oculto.gif"/>
+      </tools>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>
